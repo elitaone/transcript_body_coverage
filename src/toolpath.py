@@ -34,7 +34,7 @@ def Tools():
         output1 = check_output('sh mytools.version', shell=True)
         os.remove('mytools.version')
     except:
-        'bedtools error.'
+        print 'bedtools error.'
         os.remove('mytools.version')
         quit()
     
@@ -45,7 +45,7 @@ def Tools():
         output2 = check_output('sh mytools.version', shell=True)
         os.remove('mytools.version')
     except:
-        'samtools error.'
+        print 'samtools error.'
         os.remove('mytools.version')
         quit()
     return output1, output2

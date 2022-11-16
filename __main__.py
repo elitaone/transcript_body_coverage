@@ -3,6 +3,8 @@
 '''
 Log:
 released on Sept, 2021
+Modifications on Nov 15, 2022:
+    fix the name_list bug in args.mode =='plot'.
 '''
 
 import os, sys
@@ -141,7 +143,7 @@ if __name__ == '__main__':
             for idx, item in enumerate(ls, 1):
                 name_list.append('{}{}'.format(item, idx))
         else:
-            name_ls = args.name_list
+            name_list = args.name_list
         PlotMatrix.Plot(args.report_list, name_list, args.png, args.Endseq_cutoff)
     elif args.mode =='annotation':
         PrepareAnnotation.PrepareGencode(args.gtf, args.output_file)
@@ -149,4 +151,4 @@ if __name__ == '__main__':
         print 'Error: Choose either annotation, count or plot as subparser.'
 
     localtime = time.asctime(time.localtime())
-    print "End at :", localtime  
+    print "End at :", localtime 
